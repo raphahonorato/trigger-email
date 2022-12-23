@@ -1,1 +1,1 @@
-## Desparador de email funcionantee operante brabamente
+## Disparador de email funcionantee operante brabamente
