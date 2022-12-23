@@ -1,7 +1,7 @@
 const express = require('express')
 const nodemailer = require('nodemailer')
 const app = express()
-const port = 3000
+const port = PROCESS.ENV.PORT
 
 //credenciais do email de disparo
 const user = "master@cuidarecife.com.br"
