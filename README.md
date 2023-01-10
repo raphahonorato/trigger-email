@@ -1,25 +1,55 @@
 ## Disparador de email
 
-Para instalar as depencias
+Para instalar as dependências
 
-npm install
+`npm install`
 
+---
 
 Para executar o script
 
-npm start
+`npm start`
 
-Para disparar o email acesse
-http://localhost:PORT
+---
+
+Para acessar a aplicação
+`http://localhost:<PORT>`
 
 DEFAULT=3000
 
-*editável no arquivo .env
+>Editável no arquivo `.env`
 
---------------
+---
 
 Como disparar o email
 
-acesse a rota /send
+Acesse a rota `/send`
 
-assim que é acessada o email é disparado automaticamente
+>Assim que é acessada, o email é disparado automaticamente.
+
+
+---
+
+
+    transporter.sendMail({
+        from: '"NOME DE EXIBICAO" <EMAIL_REMETENTE>',                          //quem enviou o email
+        to: "<EMAIL_DETINATARIO>",                                             //onde chegará o formulário preenchido do usuário
+        replyTo: "<EMAIL_REPLY_TO>",                                           //botão reply (responde para esse email)
+        subject: "Dados de Formulário",                                        //assunto do email
+        text: "Informações do Formulário: \nCarteira: " + req.query.carteira
+            + "\nQuantidade de Tokens: " + req.query.tokens
+            + "\nNome: " + req.query.nome
+            + "\nCPF: " + req.query.cpf
+            + "\nemail: " + req.query.email
+            + "\nTelefone: " + req.query.telefone,                              //conteúdo do email --PODE SER INSERIDO HTML
+            
+            
+>Nesse meu contexto, usei para pegar informações de um formulário que é trazido pelo front da minha aplicação.
+
+>Que responde para um outro email feito que armazena esses dados.
+
+---
+
+Créditos--
+
+Para construir isso usei o [nodemailer](https://github.com/nodemailer/nodemailer)
