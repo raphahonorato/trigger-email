@@ -1,4 +1,4 @@
-## Disparador de email
+## Disparador de email em JavaScript
 
 Para instalar as dependências
 
@@ -29,6 +29,11 @@ Acesse a rota `/send`
 
 
 ---
+>Nesse meu contexto, usei para pegar informações de um formulário que é trazido pelo front da minha aplicação.
+
+>Que responde para um outro email feito que armazena esses dados.
+
+
 
 
     transporter.sendMail({
@@ -44,12 +49,10 @@ Acesse a rota `/send`
             + "\nTelefone: " + req.query.telefone,                              //conteúdo do email --PODE SER INSERIDO HTML
             
             
->Nesse meu contexto, usei para pegar informações de um formulário que é trazido pelo front da minha aplicação.
 
->Que responde para um outro email feito que armazena esses dados.
 
 ---
 
 Créditos--
 
-Para construir isso usei o [nodemailer](https://github.com/nodemailer/nodemailer)
+Para construir isso usei a biblioteca [nodemailer](https://github.com/nodemailer/nodemailer)
